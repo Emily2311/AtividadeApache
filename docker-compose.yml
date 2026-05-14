@@ -1,12 +1,12 @@
 services:
   postgres:
     image: postgres:15
-    container_name: project-apache-hop
+    container_name: postgres-db
     restart: always
     environment:
-      POSTGRES_USER: hopuser
-      POSTGRES_PASSWORD: hopsenha
-      POSTGRES_DB: hopdb
+      POSTGRES_USER: usuario
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: banco_dw
     ports:
       - "5432:5432"
     volumes:
@@ -19,8 +19,8 @@ services:
     container_name: pgadmin
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: usuario@email.com
+      PGADMIN_DEFAULT_PASSWORD: senha123
     ports:
       - "5050:80"
     volumes:
